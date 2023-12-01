@@ -2,10 +2,8 @@
 .poster {
     box-sizing: border-box;
     border: 3px solid black;
-    padding: 10px;
     background-color: rgb(204, 233, 243);
-    border-radius: 15px;
-    width: 1024px; 
-    height: 1524px; 
+    width: 100px; 
+    height: 150px; 
   }
 
