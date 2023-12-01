@@ -1,9 +1,9 @@
 import './Movies.css'
 import Movie from '../Movie/Movie';
-export default function Movies({movies}) {
+export default function Movies({movies, displayMovie}) {
     
     const movieCards = movies.map((movie) => {
-        console.log("movies",movies)
+        // console.log("movies",movies)
         return(
             <Movie 
             title={movie.title}
@@ -13,6 +13,7 @@ export default function Movies({movies}) {
             backDropPath={movie.backdrop_path}
             id={movie.id}
             key={movie.id}
+            displayMovie={displayMovie}
             />
         )
     })
