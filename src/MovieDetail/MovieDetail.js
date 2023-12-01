@@ -1,7 +1,7 @@
 //      <img className="poster" src={backDropPath} alt={`Backdrop for ${title}`}></img>
 
 
-export default function MovieDetail({selectedMovie}) {
+export default function MovieDetail({selectedMovie, displayHomePage}) {
     console.log(selectedMovie)
     return (
         <div>
@@ -12,6 +12,7 @@ export default function MovieDetail({selectedMovie}) {
             <p>overview: "Some overview that is full of buzzwords to attempt to entice you to watch this movie! Explosions! Drama! True love! Robots! A cute dog!"</p>
             <p>average_rating: 6</p>
             <p>genres: ["Drama"], budget:63000000, revenue:100853753, runtime:139, tagline: "It's a movie!"</p>
+            <button onClick={(() => displayHomePage())}>Back To Home</button>
         </div>
     )
 }
