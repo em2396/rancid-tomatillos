@@ -9,34 +9,24 @@ function App() {
   const [ movies, setMovies ] = useState(movieData.movies)
   // const movies = movieData.movies
 
-  const [selectedMovie, displaySelected] = useState(null);
+  const [selectedMovie, setSelectedMovie] = useState(null);
 
   function displayMovie(id) {
-    const findMovies = movies.find(selected => {
-      console.log(selected, 'each individual movie')
+    const findMovie = movies.find(selected => {
+      // console.log(selected, 'each individual movie')
       return selected.id === id;
     })
-    console.log(findMovies, 'findMovies')
-    displaySelected(findMovies)
+    // console.log(findMovies, 'findMovies')
+    setSelectedMovie(findMovie)
   }
 
-  function singleMovie() {
-    return (
-      <MovieDetail selectedMovie={selectedMovie}/>
-      )
-    }
-    
-    
-    function allMovies() {
-      return (
-        <div className="App">
-        <Header />
-        <Movies movies={movies} displayMovie={displayMovie} />
+  return (
+    <div className="App">
+      <Header />
+      {selectedMovie &&  <MovieDetail selectedMovie={selectedMovie}/>}
+      {!selectedMovie && <Movies movies={movies} displayMovie={displayMovie} />}
     </div>
-      )
-    }
-
-    return (!selectedMovie ? allMovies() : singleMovie())
+  )
 }
 
 export default App;
