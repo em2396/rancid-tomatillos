@@ -20,11 +20,22 @@ function App() {
     setSelectedMovie(findMovie)
   }
 
-  return (
+  function displayHomePage() {
+    setSelectedMovie(null)
+    return(
     <div className="App">
       <Header />
       {selectedMovie &&  <MovieDetail selectedMovie={selectedMovie}/>}
-      {!selectedMovie && <Movies movies={movies} displayMovie={displayMovie} />}
+      {!selectedMovie && <Movies movies={movies} displayMovie={displayMovie}/>}
+    </div>
+    )
+  }
+
+  return (
+    <div className="App">
+      <Header />
+      {selectedMovie &&  <MovieDetail selectedMovie={selectedMovie} displayHomePage={displayHomePage}/>}
+      {!selectedMovie && <Movies movies={movies} displayMovie={displayMovie}/>}
     </div>
   )
 }
