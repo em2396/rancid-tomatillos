@@ -1,9 +1,35 @@
 
+.poster-container:hover .on-image {
+  display: block;
+  position: relative;
+} 
+
 .poster {
     box-sizing: border-box;
-    border: 3px solid black;
+    margin-top: 100px;
     background-color: rgb(204, 233, 243);
-    width: 10vw; 
-    height: 75vh; 
+    width: 12vw; 
+    height: 50vh; 
+    position: relative;
   }
+
+.poster:hover {
+  transform: scale(1.5) !important;
+  box-shadow: 0 0 10px white;
+}
+
+.on-image {
+  display: none;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%);
+  color: white;
+  background-color: rgba(0, 0, 0, .5);
+  padding: 8px;
+  width: 18vw;
+  margin: 5px;
+}
+
+
 
