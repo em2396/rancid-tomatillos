@@ -7,8 +7,8 @@ import './App.css';
 
 function App() {
   const [ movies, setMovies ] = useState([])
-  // const movies = movieData.movies
   const [selectedMovie, setSelectedMovie] = useState(null);
+  const [currentMovieIndex, setCurrentMovieIndex] = useState(0);
   const [error, setError ] = useState('')
 
   useEffect(() => {
@@ -33,17 +33,11 @@ function App() {
       setError(error.message)
     })
   }
-
-  // const getSingleMovie = (id) => {
-    
-  // }
   
   function displayMovie(id) {
     const findMovie = movies.find(selected => {
-      // console.log(selected, 'each individual movie')
       return selected.id === id;
     })
-    // console.log(findMovies, 'findMovies')
     setSelectedMovie(findMovie)
     fetch(`https://rancid-tomatillos.herokuapp.com/api/v2//movies/${findMovie.id}`)
     .then(response => {
@@ -67,16 +61,22 @@ function App() {
     setSelectedMovie(null)
   }
 
+  function arrowLeft() {
+    setCurrentMovieIndex(prevIndex => (prevIndex > 0 ? prevIndex - 1 : 0));
+  }
+
+  function arrowRight() {
+    setCurrentMovieIndex(prevIndex => (prevIndex < movies.length - 1 ? prevIndex + 1 : prevIndex));
+  }
+
   return (
     <div className="App">
       <Header />
-      {selectedMovie ?  <MovieDetail selectedMovie={selectedMovie} displayHomePage={displayHomePage} />: <Movies movies={movies} displayMovie={displayMovie}/>}
+      <button onClick={arrowLeft}>Left Arrow &lt;</button>
+      <button onClick={arrowRight}>Right Arrow &gt;</button>
+      {selectedMovie ?  <MovieDetail selectedMovie={selectedMovie} displayHomePage={displayHomePage} />: <Movies movies={movies} displayMovie={displayMovie} currentMovieIndex={currentMovieIndex}/>}
     </div>
   )
 }
 
 export default App;
-
-
-//QUESTION:
-//1. What's the purpose of getting sample data... rather than a GET request
