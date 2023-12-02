@@ -72,8 +72,8 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <button onClick={arrowLeft}>Left Arrow &lt;</button>
-      <button onClick={arrowRight}>Right Arrow &gt;</button>
+      <button className="arrow left-arrow" onClick={arrowLeft}>&lt;</button>
+      <button className="arrow right-arrow" onClick={arrowRight}>&gt;</button>
       {selectedMovie ?  <MovieDetail selectedMovie={selectedMovie} displayHomePage={displayHomePage} />: <Movies movies={movies} displayMovie={displayMovie} currentMovieIndex={currentMovieIndex}/>}
     </div>
   )
