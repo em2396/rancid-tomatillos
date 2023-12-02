@@ -1,5 +1,6 @@
 .movies-container {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
-    grid-gap: 5px;
+    grid-gap: 1px;
+    color: white;
   }
