@@ -23,3 +23,5 @@ export default function Movies({movies, displayMovie, currentMovieIndex}) {
     )
 }
 
+
+
