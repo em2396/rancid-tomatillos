@@ -1,4 +1,5 @@
 import './Movies.css'
+import PropTypes from 'prop-types';
 import Movie from '../Movie/Movie';
 export default function Movies({movies, displayMovie, currentMovieIndex}) {
     
@@ -23,5 +24,8 @@ export default function Movies({movies, displayMovie, currentMovieIndex}) {
     )
 }
 
-
-
+Movies.propTypes = {
+    movies: PropTypes.array.isRequired , 
+    displayMovie: PropTypes.func.isRequired, 
+    currentMovieIndex: PropTypes.number.isRequired
+}
