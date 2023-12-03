@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import PropTypes from 'prop-types'
-import movieData from '../sampleData';
 import Header from '../Header/Header'
 import Movies from '../Movies/Movies';
 import MovieDetail from '../MovieDetail/MovieDetail'
@@ -8,15 +7,11 @@ import MovieDetail from '../MovieDetail/MovieDetail'
 import './App.css';
 
 function App() {
-
   const [ movies, setMovies ] = useState([])
-  // const movies = movieData.movies
-  // const [ videos, setVideos ] = useState([])
-  const [selectedMovie, setSelectedMovie] = useState(null);
-  const [selectedVideo, setSelectedVideo] = useState(null);
-  const [currentMovieIndex, setCurrentMovieIndex] = useState(0);
-  const [error, setError ] = useState('')
-
+  const [ selectedMovie, setSelectedMovie ] = useState(null);
+  const [ selectedVideo, setSelectedVideo ] = useState(null);
+  const [ currentMovieIndex, setCurrentMovieIndex ] = useState(0);
+  const [ error, setError ] = useState('')
 
   useEffect(() => {
     getMovies()
@@ -32,7 +27,6 @@ function App() {
       return response.json()
     })
     .then(moviesData => {
-      // console.log("movieData",moviesData)
       setMovies(moviesData.movies)
     })
     .catch(error => {
@@ -51,11 +45,6 @@ function App() {
       `https://rancid-tomatillos.herokuapp.com/api/v2/movies/${findMovie.id}`,
       `https://rancid-tomatillos.herokuapp.com/api/v2/movies/${findMovie.id}/videos`,
     ];
-
-    // setSelectedMovie(findMovie)
-    // console.log("selectedMovie before fetch",selectedMovie)
-    // setSelectedVideo(findMovie)
-    // console.log("selectedVideo before fetch",selectedVideo)
 
     Promise.all(apiEndpoints.map(endpoint => fetch(endpoint)
     .then(response => {
@@ -82,14 +71,11 @@ function App() {
       };
       
       setSelectedMovie(combinedDetails.movie);
-      // console.log("selectedMovie after fetch",selectedMovie)
       const findVideo = combinedDetails.videos.find(selected => { return selected.movie_id === combinedDetails.movie.id})
       setSelectedVideo(findVideo)
-      // console.log("selectedVideo after fetch",selectedMovie)
     } else {
       console.error("Unexpected structure in movieDetails array");
     }
-    
     })
   }
 
@@ -108,9 +94,13 @@ function App() {
   return (
     <div className="App">
       <Header />
+      {selectedMovie ?  <MovieDetail selectedMovie={selectedMovie} selectedVideo={selectedVideo} displayHomePage={displayHomePage} />: 
+      <>
       <button className="arrow left-arrow" onClick={arrowLeft}>&lt;</button>
       <button className="arrow right-arrow" onClick={arrowRight}>&gt;</button>
-      {selectedMovie ?  <MovieDetail selectedMovie={selectedMovie} selectedVideo={selectedVideo} displayHomePage={displayHomePage} />: <Movies movies={movies} displayMovie={displayMovie} currentMovieIndex={currentMovieIndex}/>}
+      <Movies movies={movies} displayMovie={displayMovie} currentMovieIndex={currentMovieIndex}
+      />
+      </>}
     </div>
   )
 }

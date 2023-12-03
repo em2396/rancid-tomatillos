@@ -1,7 +1,9 @@
+import PropTypes from 'prop-types'
+
 export default function MovieDetail({selectedMovie, selectedVideo, displayHomePage}) {
     //some movies have 2 videos, use conditional rendering
     // console.log("selectedMovie",selectedMovie)
-    // console.log("selectedVideo",selectedVideo)
+    console.log("selectedVideo",selectedVideo)
     return (
         <div>
             <h1>{selectedMovie.title}</h1>
@@ -28,3 +30,27 @@ export default function MovieDetail({selectedMovie, selectedVideo, displayHomePa
     )
 }
 
+MovieDetail.propTypes = {
+    selectedMovie: PropTypes.object.isRequired,
+    selectedVideo: PropTypes.object.isRequired,
+    displayHomePage: PropTypes.func.isRequired
+}
+
+// App.propTypes = {
+//     movies: PropTypes.arrayOf(
+//     PropTypes.shape({
+//       title: PropTypes.string,
+//       poster_path: PropTypes.string,
+//       average_rating: PropTypes.number,
+//       id: PropTypes.number,
+//     })
+//     ).isRequired,
+//     chosenMovie: PropTypes.shape({
+//     title: PropTypes.string,
+//     backdrop_path: PropTypes.string,
+//     poster_path: PropTypes.string,
+//     average_rating: PropTypes.number,
+//     release_date: PropTypes.string,
+//     id: PropTypes.number,
+//     }).isRequired,
+//    };
