@@ -2,10 +2,11 @@ import { useState, useEffect } from 'react';
 import movieData from '../sampleData';
 import Header from '../Header/Header'
 import Movies from '../Movies/Movies';
-import MovieDetail from '../MovieDetail/MovieDetail'
+import MovieDetail from '../MovieDetail/MovieDetail';
+import PropTypes from 'prop-types';
 import './App.css';
 
-function App() {
+export default function App() {
   const [ movies, setMovies ] = useState([]);
   const [selectedMovie, setSelectedMovie] = useState(null);
   const [currentMovieIndex, setCurrentMovieIndex] = useState(0);
@@ -79,4 +80,7 @@ function App() {
   )
 }
 
-export default App;
+App.PropTypes = {
+  selectedMovie: PropTypes.func,
+  displayHomePage: PropTypes.func,
+}
