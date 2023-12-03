@@ -1,8 +1,10 @@
-//      <img className="poster" src={backDropPath} alt={`Backdrop for ${title}`}></img>
+// MovieDetail.js
 
+export default function MovieDetail({selectedMovie, selectedVideo, displayHomePage}) {
+    //some movies have 2 videos, use conditional rendering
+    // console.log("selectedMovie",selectedMovie)
+    // console.log("selectedVideo",selectedVideo)
 
-export default function MovieDetail({selectedMovie, displayHomePage}) {
-    console.log("selectedMovie",selectedMovie)
     return (
         <div>
             <h1>{selectedMovie.title}</h1>
@@ -13,14 +15,18 @@ export default function MovieDetail({selectedMovie, displayHomePage}) {
             <p>Average rating: {(selectedMovie.average_rating).toFixed(2)}/10</p>
             <p>Genre: {selectedMovie.genres}</p>
             <button onClick={(() => displayHomePage())}>Back To Home</button>
+            <h2>Videos</h2>
+            <div className="video-player">
+            <iframe
+              title="video player"
+              width="560"
+              height="315"
+              src={`https://www.youtube.com/embed/${selectedVideo.key}`}
+              frameBorder="0"
+              allowFullScreen
+            ></iframe>
+            </div>
+            
         </div>
     )
 }
-
-
-// average_rating: 5.111111111111111
-// backdrop_path: "https://image.tmdb.org/t/p/original//54yOImQgj8i85u9hxxnaIQBRUuo.jpg"
-// id: 539885
-// poster_path: "https://image.tmdb.org/t/p/original//qzA87Wf4jo1h8JMk9GilyIYvwsA.jpg"
-// release_date: "2020-07-02"
-// title: "Ava"
