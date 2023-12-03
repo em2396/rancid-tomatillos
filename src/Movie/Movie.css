@@ -25,7 +25,7 @@
   left: 50%;
   transform: translate(-50%);
   color: white;
-  background-color: rgba(0, 0, 0, .5);
+  /* background-color: rgba(0, 0, 0, .5); */
   padding: 8px;
   width: 18vw;
   margin: 5px;
