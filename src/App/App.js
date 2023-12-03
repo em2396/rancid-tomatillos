@@ -1,8 +1,10 @@
 import { useState, useEffect } from 'react';
+import PropTypes from 'prop-types'
 import movieData from '../sampleData';
 import Header from '../Header/Header'
 import Movies from '../Movies/Movies';
 import MovieDetail from '../MovieDetail/MovieDetail'
+
 import './App.css';
 
 function App() {
@@ -12,6 +14,7 @@ function App() {
   // const [ videos, setVideos ] = useState([])
   const [selectedMovie, setSelectedMovie] = useState(null);
   const [selectedVideo, setSelectedVideo] = useState(null);
+  const [currentMovieIndex, setCurrentMovieIndex] = useState(0);
   const [error, setError ] = useState('')
 
 
@@ -89,6 +92,7 @@ function App() {
     
     })
   }
+
   function displayHomePage() {
     setSelectedMovie(null)
   }
@@ -112,3 +116,12 @@ function App() {
 }
 
 export default App;
+
+App.propTypes = {
+  selectedMovie: PropTypes.object,
+  selectedVideo: PropTypes.object,
+  displayHomePage: PropTypes.func,
+  movies: PropTypes.array,
+  displayMovie: PropTypes.func,
+  currentMovieIndex: PropTypes.number,
+};
