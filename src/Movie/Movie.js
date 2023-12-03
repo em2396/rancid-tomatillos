@@ -26,7 +26,6 @@ export default function Movie({title, releaseDate, averageRating, posterImage, d
                 </svg>
                 )}
             </button>
-            <img src="" className="heart-button"></img>
             <button className="on-image">Five Star Rating Lives Here</button>
         </div>
     )
