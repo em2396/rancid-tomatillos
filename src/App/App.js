@@ -6,10 +6,10 @@ import MovieDetail from '../MovieDetail/MovieDetail'
 import './App.css';
 
 function App() {
-  const [ movies, setMovies ] = useState([])
+  const [ movies, setMovies ] = useState([]);
   const [selectedMovie, setSelectedMovie] = useState(null);
   const [currentMovieIndex, setCurrentMovieIndex] = useState(0);
-  const [error, setError ] = useState('')
+  const [error, setError ] = useState('');
 
   useEffect(() => {
     getMovies()
