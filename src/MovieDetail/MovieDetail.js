@@ -1,5 +1,7 @@
-export default function MovieDetail({selectedMovie, displayHomePage}) {
-    console.log("selectedMovie",selectedMovie)
+export default function MovieDetail({selectedMovie, selectedVideo, displayHomePage}) {
+    //some movies have 2 videos, use conditional rendering
+    // console.log("selectedMovie",selectedMovie)
+    // console.log("selectedVideo",selectedVideo)
     return (
         <div>
             <h1>{selectedMovie.title}</h1>
@@ -10,6 +12,19 @@ export default function MovieDetail({selectedMovie, displayHomePage}) {
             <p>Average rating: {(selectedMovie.average_rating).toFixed(2)}/10</p>
             <p>Genre: {selectedMovie.genres}</p>
             <button onClick={(() => displayHomePage())}>Back To Home</button>
+            <h2>Videos</h2>
+            <div className="video-player">
+            <iframe
+              title="video player"
+              width="560"
+              height="315"
+              src={`https://www.youtube.com/embed/${selectedVideo.key}`}
+              frameBorder="0"
+              allowFullScreen
+            ></iframe>
+            </div>
+            
         </div>
     )
 }
+

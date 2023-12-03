@@ -6,10 +6,14 @@ import MovieDetail from '../MovieDetail/MovieDetail'
 import './App.css';
 
 function App() {
-  const [ movies, setMovies ] = useState([]);
+
+  const [ movies, setMovies ] = useState([])
+  // const movies = movieData.movies
+  // const [ videos, setVideos ] = useState([])
   const [selectedMovie, setSelectedMovie] = useState(null);
-  const [currentMovieIndex, setCurrentMovieIndex] = useState(0);
-  const [error, setError ] = useState('');
+  const [selectedVideo, setSelectedVideo] = useState(null);
+  const [error, setError ] = useState('')
+
 
   useEffect(() => {
     getMovies()
@@ -25,7 +29,7 @@ function App() {
       return response.json()
     })
     .then(moviesData => {
-      console.log("movieData",moviesData)
+      // console.log("movieData",moviesData)
       setMovies(moviesData.movies)
     })
     .catch(error => {
@@ -38,8 +42,19 @@ function App() {
     const findMovie = movies.find(selected => {
       return selected.id === id;
     })
-    setSelectedMovie(findMovie)
-    fetch(`https://rancid-tomatillos.herokuapp.com/api/v2//movies/${findMovie.id}`)
+
+    // Define array of API endpoints
+    const apiEndpoints = [
+      `https://rancid-tomatillos.herokuapp.com/api/v2/movies/${findMovie.id}`,
+      `https://rancid-tomatillos.herokuapp.com/api/v2/movies/${findMovie.id}/videos`,
+    ];
+
+    // setSelectedMovie(findMovie)
+    // console.log("selectedMovie before fetch",selectedMovie)
+    // setSelectedVideo(findMovie)
+    // console.log("selectedVideo before fetch",selectedVideo)
+
+    Promise.all(apiEndpoints.map(endpoint => fetch(endpoint)
     .then(response => {
       if (!response.ok) {
         console.log("error in response",error)
@@ -47,16 +62,33 @@ function App() {
     }
       return response.json()
     })
-    .then(singleMovie => {
-      console.log("singleMovie",singleMovie.movie)
-      setSelectedMovie(singleMovie.movie)
-    })
-    .catch(error => {
-      console.log('error in catch', error)
-      setError(error.message)
+  ))
+  .then(movieDetails => {
+    console.log("movieDetails array:", movieDetails);
+  
+    // Ensure that the array has two elements
+    if (movieDetails.length === 2) {
+      const [movieObject, videosObject] = movieDetails;
+  
+      // Check if 'movie' property is present before accessing it
+      const movie = movieObject && movieObject.movie;
+      // console.log("movie",movie)
+      const combinedDetails = {
+        movie: movie,
+        videos: videosObject.videos || [],
+      };
+      
+      setSelectedMovie(combinedDetails.movie);
+      // console.log("selectedMovie after fetch",selectedMovie)
+      const findVideo = combinedDetails.videos.find(selected => { return selected.movie_id === combinedDetails.movie.id})
+      setSelectedVideo(findVideo)
+      // console.log("selectedVideo after fetch",selectedMovie)
+    } else {
+      console.error("Unexpected structure in movieDetails array");
+    }
+    
     })
   }
-
   function displayHomePage() {
     setSelectedMovie(null)
   }
@@ -74,7 +106,7 @@ function App() {
       <Header />
       <button className="arrow left-arrow" onClick={arrowLeft}>&lt;</button>
       <button className="arrow right-arrow" onClick={arrowRight}>&gt;</button>
-      {selectedMovie ?  <MovieDetail selectedMovie={selectedMovie} displayHomePage={displayHomePage} />: <Movies movies={movies} displayMovie={displayMovie} currentMovieIndex={currentMovieIndex}/>}
+      {selectedMovie ?  <MovieDetail selectedMovie={selectedMovie} selectedVideo={selectedVideo} displayHomePage={displayHomePage} />: <Movies movies={movies} displayMovie={displayMovie} currentMovieIndex={currentMovieIndex}/>}
     </div>
   )
 }
