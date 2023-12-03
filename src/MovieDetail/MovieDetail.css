@@ -1,0 +1,30 @@
+.selected-movie {
+    display: flex;
+    /* flex-direction: column; */
+    width: 40vw;
+    height: 40vh;
+}
+
+.img-section {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+}
+
+/* Jack: */
+
+/* .img-overlay {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.75);
+    box-shadow: 0 0 5px #1A1E22,
+    0 0 10px #1A1E22,
+    0 0 15px #1A1E22,
+    0 0 20px #1A1E22;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  } */
