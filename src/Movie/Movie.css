@@ -31,5 +31,9 @@
   margin: 5px;
 }
 
-
-
+.filled-heart,
+.heart {
+  width: 30px;
+  height: 30px;
+  border: none;
+}
