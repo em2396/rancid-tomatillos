@@ -1,9 +1,8 @@
 import './Movies.css'
 import Movie from '../Movie/Movie';
-export default function Movies({movies, displayMovie}) {
+export default function Movies({movies, displayMovie, currentMovieIndex}) {
     
-    const movieCards = movies.map((movie) => {
-        // console.log("movies",movies)
+    const movieCards = movies.slice(currentMovieIndex, currentMovieIndex + 7).map((movie) => {
         return(
             <Movie 
             title={movie.title}
@@ -23,4 +22,6 @@ export default function Movies({movies, displayMovie}) {
         </div>
     )
 }
+
+
 

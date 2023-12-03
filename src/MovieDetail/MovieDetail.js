@@ -1,10 +1,7 @@
-// MovieDetail.js
-
 export default function MovieDetail({selectedMovie, selectedVideo, displayHomePage}) {
     //some movies have 2 videos, use conditional rendering
     // console.log("selectedMovie",selectedMovie)
     // console.log("selectedVideo",selectedVideo)
-
     return (
         <div>
             <h1>{selectedMovie.title}</h1>
@@ -30,3 +27,4 @@ export default function MovieDetail({selectedMovie, selectedVideo, displayHomePa
         </div>
     )
 }
+

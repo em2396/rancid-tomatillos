@@ -6,12 +6,14 @@ import MovieDetail from '../MovieDetail/MovieDetail'
 import './App.css';
 
 function App() {
+
   const [ movies, setMovies ] = useState([])
   // const movies = movieData.movies
   // const [ videos, setVideos ] = useState([])
   const [selectedMovie, setSelectedMovie] = useState(null);
   const [selectedVideo, setSelectedVideo] = useState(null);
   const [error, setError ] = useState('')
+
 
   useEffect(() => {
     getMovies()
@@ -38,13 +40,8 @@ function App() {
   
   function displayMovie(id) {
     const findMovie = movies.find(selected => {
-      // console.log(selected, 'each individual movie')
       return selected.id === id;
     })
-
-  // function displayVideo(id) {
-  //   const findVideo = 
-  // }
 
     // Define array of API endpoints
     const apiEndpoints = [
@@ -96,18 +93,22 @@ function App() {
     setSelectedMovie(null)
   }
 
+  function arrowLeft() {
+    setCurrentMovieIndex(prevIndex => (prevIndex > 0 ? prevIndex - 1 : 0));
+  }
+
+  function arrowRight() {
+    setCurrentMovieIndex(prevIndex => (prevIndex < movies.length - 1 ? prevIndex + 1 : prevIndex));
+  }
+
   return (
     <div className="App">
       <Header />
-      {selectedMovie ? 
-        <MovieDetail selectedMovie={selectedMovie} selectedVideo={selectedVideo} displayHomePage={displayHomePage}/>
-        : <Movies movies={movies} displayMovie={displayMovie}/>}
+      <button className="arrow left-arrow" onClick={arrowLeft}>&lt;</button>
+      <button className="arrow right-arrow" onClick={arrowRight}>&gt;</button>
+      {selectedMovie ?  <MovieDetail selectedMovie={selectedMovie} selectedVideo={selectedVideo} displayHomePage={displayHomePage} />: <Movies movies={movies} displayMovie={displayMovie} currentMovieIndex={currentMovieIndex}/>}
     </div>
   )
 }
 
 export default App;
-
-
-//QUESTION:
-//1. What's the purpose of getting sample data... rather than a GET request
