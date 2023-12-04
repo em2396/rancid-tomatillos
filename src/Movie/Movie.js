@@ -1,10 +1,10 @@
 import './Movie.css';
 import PropTypes from 'prop-types'
-import { useState } from 'react';
 
-export default function Movie({title, releaseDate, averageRating, posterImage, displayMovie, id, isLiked,toggleLikeButton}) {
-
-    console.log("isLiked in Movie",isLiked)
+export default function Movie({title, releaseDate, averageRating, posterImage, displayMovie, id, likedMovies,toggleLikeButton}) {
+    //checks if there is at least one movie in the likedMovies array whose id matches the given id. Let me break it down:
+    const isMovieLiked = likedMovies.some(movie => movie.id === id);
+    
     return(
         <div className="poster-container">
             {/* <h1>{title}</h1> */}
@@ -15,7 +15,7 @@ export default function Movie({title, releaseDate, averageRating, posterImage, d
                 <section className="rating-heart-container on-image">
                     <div className="five-star-rating on-image">Five Star Rating Lives Here</div>
                     <div className="on-image" onClick={() => toggleLikeButton(id)}>
-                    {!isLiked ? (
+                    {!isMovieLiked ? (
                     <svg className="heart on-image" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z"></path>
                     </svg> ) : (
