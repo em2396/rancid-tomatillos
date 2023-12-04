@@ -1,5 +1,6 @@
 .selected-movie {
     position: relative;
+    opacity: .8;
   }
   
   .backdrop-container {
