@@ -1,30 +1,48 @@
 .selected-movie {
-    display: flex;
-    /* flex-direction: column; */
-    width: 40vw;
-    height: 40vh;
-}
-
-.img-section {
     position: relative;
+  }
+  
+  .backdrop-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+  }
+  
+  .backdrop-poster {
     width: 100%;
     height: 100%;
-    background-size: cover;
-    background-position: center;
-}
-
-/* Jack: */
-
-/* .img-overlay {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.75);
-    box-shadow: 0 0 5px #1A1E22,
-    0 0 10px #1A1E22,
-    0 0 15px #1A1E22,
-    0 0 20px #1A1E22;
+    /* opacity: 0.8; */
+    z-index: 0;
+  }
+  
+  .on-single-image {
+    position: absolute;
     display: flex;
+    top: 40%;
+    left: 25%;
+    transform: translate(-50%, -50%);
+    color: white;
+    z-index: 1;
+  }
+  
+  .single-post {
+    width: 18vw;
+    margin: 5px;
+    border: 8px solid black;
+  }
+  
+  .video-player {
+    width: 25vw;
+    height: 50vh;
+    /* left: 55%; */
+    transform: translate(70%, 10%);
+  }
+  
+  .single-text {
+    margin: 5px;
     align-items: center;
-    justify-content: center;
-  } */
+    padding: 20px;
+    width: 25vw;
+    background-color: black;
+  }
+  
