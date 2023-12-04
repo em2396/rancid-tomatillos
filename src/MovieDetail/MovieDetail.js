@@ -22,7 +22,7 @@ export default function MovieDetail({selectedMovie, selectedVideo, displayHomePa
                     <p>Release date: {selectedMovie.release_date}</p>
                     <p>Overview: {selectedMovie.overiew}</p>
                     <p>Average rating: {(selectedMovie.average_rating).toFixed(2)}/10</p>
-                    <p>Genre: {selectedMovie.genres}</p>
+                    <p>Genre: {selectedMovie.genres.join(', ')}</p>
                     <h2>Videos</h2>
                     <div className="video-player">
                         <iframe
