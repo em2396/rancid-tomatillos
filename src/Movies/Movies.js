@@ -1,7 +1,8 @@
 import './Movies.css'
 import PropTypes from 'prop-types';
 import Movie from '../Movie/Movie';
-export default function Movies({movies, displayMovie, currentMovieIndex}) {
+export default function Movies({movies, displayMovie, currentMovieIndex, toggleLikeButton, likedMovies}) {
+    console.log("isLiked in Movies",likedMovies)
     
     const movieCards = movies.slice(currentMovieIndex, currentMovieIndex + 7).map((movie) => {
         return(
@@ -14,6 +15,8 @@ export default function Movies({movies, displayMovie, currentMovieIndex}) {
             id={movie.id}
             key={movie.id}
             displayMovie={displayMovie}
+            likedMovies={likedMovies}
+            toggleLikeButton={toggleLikeButton}
             />
         )
     })
