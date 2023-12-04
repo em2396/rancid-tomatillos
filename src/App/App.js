@@ -12,6 +12,23 @@ function App() {
   const [ selectedVideo, setSelectedVideo ] = useState(null);
   const [ currentMovieIndex, setCurrentMovieIndex ] = useState(0);
   const [ error, setError ] = useState('')
+  const [ isLiked, setLiked ] = useState(false);
+  const likedMovies = []
+
+  function toggleLikeButton(id) {
+    const likedMovie = movies.find(selectedMovie => {
+      return selectedMovie.id === id;
+    })
+    // console.log("likedMovie",likedMovie)
+    likedMovies.push(likedMovie)
+    if (likedMovies.includes(likedMovie)) {
+      setLiked(!isLiked)
+    }
+    isLiked ? setLiked(isLiked) : setLiked(!isLiked)
+    // setLiked(!isLiked)
+    // setLiked(likedMovie)
+    console.log("isLiked in App",isLiked)
+  }
 
   useEffect(() => {
     getMovies()
@@ -98,7 +115,7 @@ function App() {
       <>
       <button className="arrow left-arrow" onClick={arrowLeft}>&lt;</button>
       <button className="arrow right-arrow" onClick={arrowRight}>&gt;</button>
-      <Movies movies={movies} displayMovie={displayMovie} currentMovieIndex={currentMovieIndex}
+      <Movies movies={movies} displayMovie={displayMovie} currentMovieIndex={currentMovieIndex} isLiked={isLiked} toggleLikeButton={toggleLikeButton}
       />
       </>}
     </div>
