@@ -1,10 +1,13 @@
 import './Movies.css'
 import PropTypes from 'prop-types';
 import Movie from '../Movie/Movie';
-export default function Movies({movies, displayMovie, currentMovieIndex, toggleLikeButton, likedMovies}) {
-    console.log("isLiked in Movies",likedMovies)
-    
+import { useParams } from 'react-router-dom';
+
+const Movies = ({movies, displayMovie, currentMovieIndex, toggleLikeButton, likedMovies})  => {
+    // console.log("isLiked in Movies",likedMovies)
+
     const movieCards = movies.slice(currentMovieIndex, currentMovieIndex + 7).map((movie) => {
+        // const { title, release_date, }
         return(
             <Movie 
             title={movie.title}
@@ -32,3 +35,4 @@ Movies.propTypes = {
     displayMovie: PropTypes.func.isRequired, 
     currentMovieIndex: PropTypes.number.isRequired
 }
+export default Movies

@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import Header from '../Header/Header'
 import Movies from '../Movies/Movies';
 import MovieDetail from '../MovieDetail/MovieDetail'
+import { Routes, Route } from 'react-router-dom'
 
 import './App.css';
 
@@ -106,16 +107,24 @@ function App() {
   }
 
   return (
-    <div className="App">
-      {selectedMovie ?  <MovieDetail selectedMovie={selectedMovie} selectedVideo={selectedVideo} displayHomePage={displayHomePage} />: 
+    <main className="App">
+      {/* {selectedMovie ?  <MovieDetail selectedMovie={selectedMovie} selectedVideo={selectedVideo} displayHomePage={displayHomePage} />: 
       <>
       <Header />
       <button className="arrow left-arrow" onClick={arrowLeft}>&lt;</button>
       <button className="arrow right-arrow" onClick={arrowRight}>&gt;</button>
       <Movies movies={movies} displayMovie={displayMovie} currentMovieIndex={currentMovieIndex} likedMovies={likedMovies} toggleLikeButton={toggleLikeButton}
       />
-      </>}
-    </div>
+      </>} */}
+      <Header />
+      <button className="arrow left-arrow" onClick={arrowLeft}>&lt;</button>
+      <button className="arrow right-arrow" onClick={arrowRight}>&gt;</button>
+      <Routes>
+        {/* <Route path="/" ></Route> */}
+        <Route path="/" element={<Movies movies={movies} displayMovie={displayMovie} currentMovieIndex={currentMovieIndex} likedMovies={likedMovies} toggleLikeButton={toggleLikeButton}/>}/>
+        <Route path="/:movies" element={<MovieDetail selectedMovie={selectedMovie} selectedVideo={selectedVideo} displayHomePage={displayHomePage}/>}/>
+      </Routes>
+    </main>
   )
 }
 
