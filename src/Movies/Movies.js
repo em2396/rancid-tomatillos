@@ -1,13 +1,9 @@
 import './Movies.css'
 import PropTypes from 'prop-types';
 import Movie from '../Movie/Movie';
-import { useParams } from 'react-router-dom';
 
 const Movies = ({movies, displayMovie, currentMovieIndex, toggleLikeButton, likedMovies})  => {
-    // console.log("isLiked in Movies",likedMovies)
-
     const movieCards = movies.slice(currentMovieIndex, currentMovieIndex + 7).map((movie) => {
-        // const { title, release_date, }
         return(
             <Movie 
             title={movie.title}
@@ -22,7 +18,8 @@ const Movies = ({movies, displayMovie, currentMovieIndex, toggleLikeButton, like
             toggleLikeButton={toggleLikeButton}
             />
         )
-    })
+    });
+
     return(
         <div className="movies-container">
             {movieCards}

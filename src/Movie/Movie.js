@@ -3,15 +3,11 @@ import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom';
 
 export default function Movie({title, releaseDate, averageRating, posterImage, displayMovie, id, likedMovies,toggleLikeButton}) {
-    //checks if there is at least one movie in the likedMovies array whose id matches the given id. Let me break it down:
     const isMovieLiked = likedMovies.some(movie => movie.id === id);
-    
     return(
         <div className="poster-container">
-            {/* <h1>{title}</h1> */}
-            <Link to="/movie">
+            <Link to={`/${title}`}>
                 <img onClick={() => displayMovie(id)} className="poster" src={posterImage} alt={`Poster for ${title}`}></img>
-                {/* <button className="on-image">Heart</button> */}
             </Link>
             <section className="description-buttons-container">
                 <p className="on-image movie-details"> This movie was released on {releaseDate} with an average rating of {averageRating}/10.</p>
@@ -36,5 +32,4 @@ export default function Movie({title, releaseDate, averageRating, posterImage, d
 Movie.propTypes = {
     isLiked: PropTypes.bool,
 };
-//This works for the heart button but it loses its heart when you arrow it out of the image
 
