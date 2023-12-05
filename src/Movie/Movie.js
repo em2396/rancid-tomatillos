@@ -1,5 +1,6 @@
 import './Movie.css';
 import PropTypes from 'prop-types'
+import { Link } from 'react-router-dom';
 
 export default function Movie({title, releaseDate, averageRating, posterImage, displayMovie, id, likedMovies,toggleLikeButton}) {
     //checks if there is at least one movie in the likedMovies array whose id matches the given id. Let me break it down:
@@ -8,8 +9,10 @@ export default function Movie({title, releaseDate, averageRating, posterImage, d
     return(
         <div className="poster-container">
             {/* <h1>{title}</h1> */}
-            <img onClick={() => displayMovie(id)} className="poster" src={posterImage} alt={`Poster for ${title}`}></img>
-            {/* <button className="on-image">Heart</button> */}
+            <Link to="/movie">
+                <img onClick={() => displayMovie(id)} className="poster" src={posterImage} alt={`Poster for ${title}`}></img>
+                {/* <button className="on-image">Heart</button> */}
+            </Link>
             <section className="description-buttons-container">
                 <p className="on-image movie-details"> This movie was released on {releaseDate} with an average rating of {averageRating}/10.</p>
                 <section className="rating-heart-container on-image">
