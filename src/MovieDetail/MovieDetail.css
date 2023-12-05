@@ -1,49 +1,79 @@
+
+
 .selected-movie {
+    display: flex;
+    align-content: center;
     position: relative;
     opacity: .8;
+    background-color: rgb(255, 255, 255);
+    font-family: 'Roboto', 'sans-serif';
+
   }
   
   .backdrop-container {
     position: relative;
+    align-items: flex-start;
     width: 100vw;
     height: 100vh;
   }
   
+  
   .backdrop-poster {
-    width: 100%;
-    height: 100%;
-    /* opacity: 0.8; */
+    width: 100vw;
+    height: 100vh;
+    opacity: 0.5;
     z-index: 0;
   }
   
   .on-single-image {
     position: absolute;
     display: flex;
-    top: 40%;
-    left: 25%;
+    top: 50%;
+    left: 50%;
     transform: translate(-50%, -50%);
     color: white;
+    width: 60vw;
+    height: 70vh;
+    background-color: black;
     z-index: 1;
+  }
+
+  .video-and-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: black;
+    padding: 70px;
+    font-size: 20px;
   }
   
   .single-post {
     width: 18vw;
-    margin: 5px;
-    border: 8px solid black;
-  }
-  
-  .video-player {
-    width: 25vw;
-    height: 50vh;
-    /* left: 55%; */
-    transform: translate(70%, 10%);
+    padding: 50px;
   }
   
   .single-text {
-    margin: 5px;
-    align-items: center;
-    padding: 20px;
-    width: 25vw;
+    font-size: 20px;
+    padding-top: 20px;
+    padding-bottom: 30px;
     background-color: black;
   }
+
+  .back-to-home {
+    background-color: rgb(249, 246, 246);
+    color: black;
+    border-radius: 25px;
+    padding: 7px;
+    width: 220px;
+    height: 40px;
+    font-size: 23px;
+    cursor: pointer;
+  }
+
+  .back-to-home:hover {
+    background-color: rgb(172, 173, 189);
+  }
   
+  .video {
+    cursor: pointer;
+  }
