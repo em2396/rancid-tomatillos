@@ -11,7 +11,7 @@ export default function Movie({title, releaseDate, averageRating, posterImage, d
             <img onClick={() => displayMovie(id)} className="poster" src={posterImage} alt={`Poster for ${title}`}></img>
             {/* <button className="on-image">Heart</button> */}
             <section className="description-buttons-container">
-                <p className="on-image">This movie was released on {releaseDate} with an average rating of {averageRating}/10.</p>
+                <p className="on-image movie-details"> This movie was released on {releaseDate} with an average rating of {averageRating}/10.</p>
                 <section className="rating-heart-container on-image">
                     <div className="five-star-rating on-image">Five Star Rating Lives Here</div>
                     <div className="on-image" onClick={() => toggleLikeButton(id)}>
