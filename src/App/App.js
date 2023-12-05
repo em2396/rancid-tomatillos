@@ -4,10 +4,9 @@ import Header from '../Header/Header'
 import Movies from '../Movies/Movies';
 import MovieDetail from '../MovieDetail/MovieDetail'
 import { Routes, Route } from 'react-router-dom'
-
 import './App.css';
 
-function App() {
+export default function App() {
   const [ movies, setMovies ] = useState([])
   const [ selectedMovie, setSelectedMovie ] = useState(null);
   const [ selectedVideo, setSelectedVideo ] = useState(null);
@@ -58,8 +57,6 @@ function App() {
     const findMovie = movies.find(selected => {
       return selected.id === id;
     })
-
-    // Define array of API endpoints
     const apiEndpoints = [
       `https://rancid-tomatillos.herokuapp.com/api/v2/movies/${findMovie.id}`,
       `https://rancid-tomatillos.herokuapp.com/api/v2/movies/${findMovie.id}/videos`,
@@ -75,8 +72,6 @@ function App() {
     })
   ))
   .then(movieDetails => {
-    console.log("movieDetails array:", movieDetails);
-  
     if (movieDetails.length === 2) {
       const [movieObject, videosObject] = movieDetails;
       const movie = movieObject && movieObject.movie;
@@ -108,27 +103,23 @@ function App() {
 
   return (
     <main className="App">
-      {/* {selectedMovie ?  <MovieDetail selectedMovie={selectedMovie} selectedVideo={selectedVideo} displayHomePage={displayHomePage} />: 
-      <>
-      <Header />
-      <button className="arrow left-arrow" onClick={arrowLeft}>&lt;</button>
-      <button className="arrow right-arrow" onClick={arrowRight}>&gt;</button>
-      <Movies movies={movies} displayMovie={displayMovie} currentMovieIndex={currentMovieIndex} likedMovies={likedMovies} toggleLikeButton={toggleLikeButton}
-      />
-      </>} */}
-      <Header />
-      <button className="arrow left-arrow" onClick={arrowLeft}>&lt;</button>
-      <button className="arrow right-arrow" onClick={arrowRight}>&gt;</button>
       <Routes>
-        {/* <Route path="/" ></Route> */}
-        <Route path="/" element={<Movies movies={movies} displayMovie={displayMovie} currentMovieIndex={currentMovieIndex} likedMovies={likedMovies} toggleLikeButton={toggleLikeButton}/>}/>
+        <Route
+          path="/"
+          element= {
+            <>
+              <Header />
+              <button className="arrow left-arrow" onClick={arrowLeft}>&lt;</button>
+              <button className="arrow right-arrow" onClick={arrowRight}>&gt;</button>
+              <Movies movies={movies} displayMovie={displayMovie} currentMovieIndex={currentMovieIndex} likedMovies={likedMovies} toggleLikeButton={toggleLikeButton}/>
+            </>
+          }
+        />
         <Route path="/:movies" element={<MovieDetail selectedMovie={selectedMovie} selectedVideo={selectedVideo} displayHomePage={displayHomePage}/>}/>
       </Routes>
     </main>
   )
-}
-
-export default App;
+};
 
 App.propTypes = {
   selectedMovie: PropTypes.object,
@@ -138,3 +129,12 @@ App.propTypes = {
   displayMovie: PropTypes.func,
   currentMovieIndex: PropTypes.number,
 };
+
+{/* {selectedMovie ?  <MovieDetail selectedMovie={selectedMovie} selectedVideo={selectedVideo} displayHomePage={displayHomePage} />: 
+<>
+<Header />
+<button className="arrow left-arrow" onClick={arrowLeft}>&lt;</button>
+<button className="arrow right-arrow" onClick={arrowRight}>&gt;</button>
+<Movies movies={movies} displayMovie={displayMovie} currentMovieIndex={currentMovieIndex} likedMovies={likedMovies} toggleLikeButton={toggleLikeButton}
+/>
+</>} */}
