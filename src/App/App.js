@@ -107,9 +107,9 @@ function App() {
 
   return (
     <div className="App">
-      <Header />
       {selectedMovie ?  <MovieDetail selectedMovie={selectedMovie} selectedVideo={selectedVideo} displayHomePage={displayHomePage} />: 
       <>
+      <Header />
       <button className="arrow left-arrow" onClick={arrowLeft}>&lt;</button>
       <button className="arrow right-arrow" onClick={arrowRight}>&gt;</button>
       <Movies movies={movies} displayMovie={displayMovie} currentMovieIndex={currentMovieIndex} likedMovies={likedMovies} toggleLikeButton={toggleLikeButton}
