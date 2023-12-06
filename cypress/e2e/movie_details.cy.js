@@ -12,11 +12,8 @@ describe('Display movie details', () => {
   })
 
   it('should display specific movie details on page load', () => {
-  // cy.get('.selected-movie').should('be.visisble')
-  // cy.get('.backdrop-poster').should('be.visible').and('have.attr', 'src', 'https://image.tmdb.org/t/p/original//bQXAqRx2Fgc46uCVWgoPz5L5Dtr.jpg');
-  // cy.get('.single-post').should('be.visible').and('have.attr', 'src', 'https://image.tmdb.org/t/p/original//pq0JSpwyT2URytdFG0euztQPAyR.jpg');
-  cy.get('.single-text').should('contain','Release date: 2022-10-19')
-  //.should('have.attr', 'src').should('include', 'source link url')
+  cy.get('.single-text').should('exist');
+  cy.get('.single-text').invoke('text').should('contain','Release date: 2022-09-15 Overview: The story of the Agojie, the all-female unit of warriors who protected the African Kingdom of Dahomey in the 1800s with skills and a fierceness unlike anything the world has ever seen, and General Nanisca as she trains the next generation of recruits and readies them for battle against an enemy determined to destroy their way of life. Average rating: 4.00/10 Genre: Action, Drama, History')
   }) 
 })
 
