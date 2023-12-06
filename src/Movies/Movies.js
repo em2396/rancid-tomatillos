@@ -1,7 +1,8 @@
 import './Movies.css'
+import PropTypes from 'prop-types';
 import Movie from '../Movie/Movie';
-export default function Movies({movies, displayMovie, currentMovieIndex}) {
-    
+
+const Movies = ({movies, displayMovie, currentMovieIndex, toggleLikeButton, likedMovies})  => {
     const movieCards = movies.slice(currentMovieIndex, currentMovieIndex + 7).map((movie) => {
         return(
             <Movie 
@@ -13,9 +14,12 @@ export default function Movies({movies, displayMovie, currentMovieIndex}) {
             id={movie.id}
             key={movie.id}
             displayMovie={displayMovie}
+            likedMovies={likedMovies}
+            toggleLikeButton={toggleLikeButton}
             />
         )
-    })
+    });
+
     return(
         <div className="movies-container">
             {movieCards}
@@ -23,5 +27,9 @@ export default function Movies({movies, displayMovie, currentMovieIndex}) {
     )
 }
 
-
-
+Movies.propTypes = {
+    movies: PropTypes.array.isRequired , 
+    displayMovie: PropTypes.func.isRequired, 
+    currentMovieIndex: PropTypes.number.isRequired
+}
+export default Movies

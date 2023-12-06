@@ -1,0 +1,81 @@
+
+
+.selected-movie {
+    display: flex;
+    align-content: center;
+    position: relative;
+    opacity: .8;
+    background-color: rgb(255, 255, 255);
+    font-family: 'Roboto', 'sans-serif';
+
+  }
+  
+  .backdrop-container {
+    position: relative;
+    align-items: flex-start;
+    width: 100vw;
+    height: 100vh;
+  }
+  
+  
+  .backdrop-poster {
+    width: 100vw;
+    height: 100vh;
+    opacity: 0.5;
+    z-index: 0;
+  }
+  
+  .on-single-image {
+    position: absolute;
+    display: flex;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    width: 80vw;
+    height: 90vh;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 1;
+  }
+
+  .video-and-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* background-color: rgba(0, 0, 0, 0.3); */
+    width: 30vw;
+    height: 50vh;
+    padding: 70px;
+    font-size: 20px;
+  }
+  
+  .single-post {
+    width: 18vw;
+    padding: 50px;
+  }
+  
+  .single-text {
+    font-size: 20px;
+    padding-top: 20px;
+    padding-bottom: 30px;
+    /* background-color: rgba(0, 0, 0, 0.3); */
+  }
+
+  .back-to-home {
+    background-color: rgb(249, 246, 246);
+    color: black;
+    border-radius: 25px;
+    padding: 7px;
+    width: 220px;
+    height: 40px;
+    font-size: 23px;
+    cursor: pointer;
+  }
+
+  .back-to-home:hover {
+    background-color: rgb(172, 173, 189);
+  }
+  
+  .video {
+    cursor: pointer;
+  }

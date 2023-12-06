@@ -1,4 +1,8 @@
 
+.poster-container {
+  position: relative;
+}
+
 .poster-container:hover .on-image {
   display: block;
   position: relative;
@@ -21,14 +25,13 @@
 .on-image {
   display: none;
   position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translate(-50%);
+  /* bottom: 0; */
   color: white;
   background-color: rgba(0, 0, 0, .5);
-  padding: 8px;
+}
+
+.five-star-rating {
   width: 18vw;
-  margin: 5px;
 }
 
 .filled-heart,
@@ -36,4 +39,21 @@
   width: 30px;
   height: 30px;
   border: none;
+  /* width: 5vw; */
+}
+
+/* 
+.description-buttons-container {
+  display: flex;
+  flex-direction: column;
+  margin: 0px;
+  padding: 5px;
+} */
+
+.description-buttons-container p {
+  margin: 0;
+}
+
+.rating-heart-container {
+  display: flex !important;
 }
