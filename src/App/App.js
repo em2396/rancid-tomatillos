@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import Header from '../Header/Header'
 import Movies from '../Movies/Movies';
 import MovieDetail from '../MovieDetail/MovieDetail'
+import Error from '../Error/Error';
 import { Routes, Route } from 'react-router-dom'
 import './App.css';
 
@@ -111,11 +112,13 @@ export default function App() {
               <Header />
               <button className="arrow left-arrow" onClick={arrowLeft}>&lt;</button>
               <button className="arrow right-arrow" onClick={arrowRight}>&gt;</button>
+              <Error error={error} message="We're experiencing server issues. Please try again later."/>
               <Movies movies={movies} displayMovie={displayMovie} currentMovieIndex={currentMovieIndex} likedMovies={likedMovies} toggleLikeButton={toggleLikeButton}/>
             </>
           }
         />
         <Route path="/:movies" element={<MovieDetail selectedMovie={selectedMovie} selectedVideo={selectedVideo} displayHomePage={displayHomePage}/>}/>
+        <Route path='/*' element={<Error error={error} message="The page you're looking for doesn't exist."/>}/>
       </Routes>
     </main>
   )
