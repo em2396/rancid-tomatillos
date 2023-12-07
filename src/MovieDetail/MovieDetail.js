@@ -7,7 +7,7 @@ export default function MovieDetail({ selectedMovie, selectedVideo, displayHomeP
         return <p>Loading...</p>
     }
   return (
-        <div className="selected-movie">
+        // <div className="selected-movie">
             <div className="backdrop-container">
                 <img className="backdrop-poster" src={selectedMovie.backdrop_path} alt={`Poster for ${selectedMovie.backdrop_path}`} />
                 <div className="on-single-image">
@@ -15,8 +15,8 @@ export default function MovieDetail({ selectedMovie, selectedVideo, displayHomeP
                     <div className="video-and-text">
                         <iframe className="video"
                         title="video player"
-                        width="560"
-                        height="315"
+                        width="660"
+                        height="915"
                         src={`https://www.youtube.com/embed/${selectedVideo.key}`}
                         frameBorder="0"
                         allowFullScreen
@@ -31,7 +31,7 @@ export default function MovieDetail({ selectedMovie, selectedVideo, displayHomeP
                     </div>
                 </div>
             </div>
-        </div>
+        // </div>
   );
 }
 
