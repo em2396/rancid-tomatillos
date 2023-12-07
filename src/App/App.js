@@ -40,7 +40,7 @@ export default function App() {
     fetch('https://rancid-tomatillos.herokuapp.com/api/v2/movies')
     .then(response => {
       if (!response.ok) {
-        console.log("error in response",error)
+        // console.log("error in response",error)
         throw new Error (`${error}: Failed to fetch data`);
     }
       return response.json()
@@ -49,7 +49,6 @@ export default function App() {
       setMovies(moviesData.movies)
     })
     .catch(error => {
-      console.log('error in catch', error)
       setError(error.message)
     })
   }
@@ -66,7 +65,7 @@ export default function App() {
     Promise.all(apiEndpoints.map(endpoint => fetch(endpoint)
     .then(response => {
       if (!response.ok) {
-        console.log("error in response",error)
+        // console.log("error in response",error)
         throw new Error (`${error}: Failed to fetch data`);
     }
       return response.json()
@@ -87,6 +86,9 @@ export default function App() {
     } else {
       console.error("Unexpected structure in movieDetails array");
     }
+    })
+    .catch(error => {
+      setError(error.message)
     })
   }
 
@@ -109,15 +111,19 @@ export default function App() {
           path="/"
           element= {
             <>
+            {(error.length > 0) ? (<Error error={error} message="The page you're looking for doesn't exist."/>) : (
+              <>
               <Header />
               <button className="arrow left-arrow" onClick={arrowLeft}>&lt;</button>
               <button className="arrow right-arrow" onClick={arrowRight}>&gt;</button>
-              <Error error={error} message="We're experiencing server issues. Please try again later."/>
               <Movies movies={movies} displayMovie={displayMovie} currentMovieIndex={currentMovieIndex} likedMovies={likedMovies} toggleLikeButton={toggleLikeButton}/>
+              </>)
+              }
             </>
           }
         />
         <Route path="/:movies" element={<MovieDetail selectedMovie={selectedMovie} selectedVideo={selectedVideo} displayHomePage={displayHomePage}/>}/>
+        {/* if route doesn't exist */}
         <Route path='/*' element={<Error error={error} message="The page you're looking for doesn't exist."/>}/>
       </Routes>
     </main>

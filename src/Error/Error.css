@@ -1,10 +1,7 @@
-.error-cont {
-    background-color: #2B3238;
-    color: #e9ecee;
-    height: 85vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-  
+.error-container {
+  border: 2px solid white;
+  padding: 10px;
+  margin: 10px;
+  color: white;
+  /* Add additional styling as needed */
+}
