@@ -1,70 +1,50 @@
-# Getting Started with Create React App
+<div align="center">
+  
+# :tomatillo: Rancid Tomatillos 
+![Tests](https://badgen.net/badge/tests/passing/green?icon=github)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## 💾 Technologies Used
+![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
+![React](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
+![Visual Studio Code](https://img.shields.io/badge/Visual%20Studio%20Code-0078d7.svg?style=for-the-badge&logo=visual-studio-code&logoColor=white)
+![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)
+![NPM](https://img.shields.io/badge/NPM-%23CB3837.svg?style=for-the-badge&logo=npm&logoColor=white)
+![Cypress](https://img.shields.io/badge/-mocha-%238D6748?style=for-the-badge&logo=mocha&logoColor=white)
 
-## Available Scripts
+## 👩‍💻 👩‍💻 👨‍💻 👩‍💻 Collaborators
+[Emalee Poellot](https://github.com/em2396)  | 
+[Amy Siu](https://github.com/amysiu1028)
 
-In the project directory, you can run:
+</div>
 
-### `npm start`
+## 💭 Abstract
+"Rancid Tomatillos" is a web application designed to provide users with a comprehensive movie exploration experience, similar to popular platforms like Rotten Tomatoes. The application allows users to browse through a curated collection of movies, view detailed information about each movie, watch trailers or clips, and access reviews to make informed decisions about their movie choices.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## 📝  Context
+We are a pair of 2 front-end developers who worked together remotely via Zoom and asynchronously through the GitHub project board to complete this application. This project was completed from week 1 to week 3 in Mod 3 of the Front End development program at Turing School of Software & Design. 
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 🎥 Preview 
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 🔌 Server Setup
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 📚 Learning Goals
+- Gain competency with React fundamentals
+- Test React components & asynchronous JS
+- Practice refactoring
+- Create a multi-page UX using Router
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 🥇 Wins
+⭐ Successfully using React for the first time while including refactoring for router
+⭐ Working collaboratively as a team to overcome any obstacles and combining our knowledge to create a successful app
+⭐
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## 🚧 Challenges
+❗ Using Cypress for the first time was challenging and difficult to wrap our heads around the syntax compared to previously using mocha and chai.
+❗
+❗
