@@ -1,18 +1,11 @@
 
-
-.selected-movie {
+.backdrop-container {
     display: flex;
-    align-content: center;
-    position: relative;
-    opacity: .8;
-    background-color: rgb(255, 255, 255);
+    justify-content: center;
+    align-items: center;
     font-family: 'Roboto', 'sans-serif';
-
-  }
-  
-  .backdrop-container {
+    background-color: rgb(255, 255, 255);
     position: relative;
-    align-items: flex-start;
     width: 100vw;
     height: 100vh;
   }
@@ -28,37 +21,40 @@
   .on-single-image {
     position: absolute;
     display: flex;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
     color: white;
     width: 80vw;
     height: 90vh;
     background-color: rgba(0, 0, 0, 0.8);
     z-index: 1;
+    max-height: 90vh;
+    overflow-y: auto;
   }
 
   .video-and-text {
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* background-color: rgba(0, 0, 0, 0.3); */
-    width: 30vw;
-    height: 50vh;
-    padding: 70px;
+    width: 40vw;
+    height: 70vh;
     font-size: 20px;
+    padding: 40px;
   }
   
   .single-post {
-    width: 18vw;
+    width: 23vw;
+    height: 70vh;
     padding: 50px;
   }
   
   .single-text {
-    font-size: 20px;
-    padding-top: 20px;
-    padding-bottom: 30px;
-    /* background-color: rgba(0, 0, 0, 0.3); */
+    font-size: 23px;
+    max-width: 80%;
+    width: 35vw;
+    height: 50vh;
+    /* margin: auto; */
   }
 
   .back-to-home {
@@ -70,6 +66,8 @@
     height: 40px;
     font-size: 23px;
     cursor: pointer;
+    margin-top: 20px;
+    align-self: flex-start;
   }
 
   .back-to-home:hover {
@@ -77,5 +75,8 @@
   }
   
   .video {
+    width: 35vw;
+    height: 50vh;
     cursor: pointer;
+    /* padding-bottom: 10px; */
   }
