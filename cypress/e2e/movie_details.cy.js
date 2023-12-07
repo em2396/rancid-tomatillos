@@ -8,15 +8,12 @@ describe('Display movie details', () => {
       statusCode: 200,
       fixture: "movie_details"
     }),
-    cy.visit('http://localhost:3000')
+    cy.visit('http://localhost:3001')
   })
 
   it('should display specific movie details on page load', () => {
-  // cy.get('.selected-movie').should('be.visisble')
-  // cy.get('.backdrop-poster').should('be.visible').and('have.attr', 'src', 'https://image.tmdb.org/t/p/original//bQXAqRx2Fgc46uCVWgoPz5L5Dtr.jpg');
-  // cy.get('.single-post').should('be.visible').and('have.attr', 'src', 'https://image.tmdb.org/t/p/original//pq0JSpwyT2URytdFG0euztQPAyR.jpg');
-  cy.get('.single-text').should('contain','Release date: 2022-10-19')
-  //.should('have.attr', 'src').should('include', 'source link url')
+  cy.get('.single-text').should('exist');
+  cy.get('.single-text').invoke('text').should('contain','Release date: 2022-10-19 Overview: Nearly 5,000 years after he was bestowed with the almighty powers of the Egyptian gods—and imprisoned just as quickly—Black Adam is freed from his earthly tomb, ready to unleash his unique form of justice on the modern world. Average rating: 4.00/10 Genre: Action, Fantasy, Science Fiction')
   }) 
 })
 

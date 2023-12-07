@@ -1,64 +1,32 @@
-describe('template spec', () => {
-  it('passes', () => {
-    cy.visit('https://example.cypress.io')
-  })
-})
+describe('Display movie details', () => {
+  it('should give an error message for a 404 status code', () => {
+    // it'll run the intercept fetch
+    cy.intercept('GET','https://rancid-tomatillos.herokuapp.com/api/v2/movies', {
+      //we'll tell it to give back a 404 response
+      statusCode: 404,
+      fixture: "movie_details.json"
+    })
+    // alias name for intercept , you create vairable name
+    .as('getMovieData')
+    cy.visit('http://localhost:3001')
+    //wait for intercept (404 error to complete)
+    cy.wait('@getMovieData')
+    cy.get('.error-container')
+    .contains(`Error: The page you're looking for doesn't exist.`);
+  });
 
-
-// /
-// describe('Display movie details', () => {
-//   beforeEach(() => {
-//     cy.intercept("GET", "https://rancid-tomatillos.herokuapp.com/api/v2/movies", {
-//       statusCode: 500,
-//       fixture: './movies.json'
-//     }),
-
-
-//or 
-
-//describe('Display movie details', () => {
-//   beforeEach(() => {
-//     cy.intercept("GET", "https://rancid-tomatillos.herokuapp.com/api/v2/movies", {
-//       statusCode: 200,
-//       fixture: './movies.json'
-//     }),
-//     cy.intercept('GET','https://rancid-tomatillos.herokuapp.com/api/v2/movies/436270', {
-//       statusCode: 400,
-//       fixture: "movie_details"
-//     }),
-//     cy.visit('http://localhost:3000')
-//   })
-
-//   it('should display specific movie details on page load', () => {
-//   // cy.get('.selected-movie').should('be.visisble')
-//   // cy.get('.backdrop-poster').should('be.visible').and('have.attr', 'src', 'https://image.tmdb.org/t/p/original//bQXAqRx2Fgc46uCVWgoPz5L5Dtr.jpg');
-//   // cy.get('.single-post').should('be.visible').and('have.attr', 'src', 'https://image.tmdb.org/t/p/original//pq0JSpwyT2URytdFG0euztQPAyR.jpg');
-//   cy.get('.single-text').should('contain','Release date: 2022-10-19')
-//   //.should('have.attr', 'src').should('include', 'source link url')
-//   }) 
-// })
-
-//   it('should display specific movie details on page load', () => {
-//   // cy.get('.selected-movie').should('be.visisble')
-//   // cy.get('.backdrop-poster').should('be.visible').and('have.attr', 'src', 'https://image.tmdb.org/t/p/original//bQXAqRx2Fgc46uCVWgoPz5L5Dtr.jpg');
-//   // cy.get('.single-post').should('be.visible').and('have.attr', 'src', 'https://image.tmdb.org/t/p/original//pq0JSpwyT2URytdFG0euztQPAyR.jpg');
-//   cy.get('.single-text').should('contain','Release date: 2022-10-19')
-//   //.should('have.attr', 'src').should('include', 'source link url')
-//   }) 
-// })
-
-//only get all movies.. error
-//404 - same fixture, bc 404:
-
-//error:
-// describe('Display movie details', () => {
-
-// cy.intercept("GET", "https://rancid-tomatillos.herokuapp.com/api/v2/movies", {
-//       statusCode: 404, //page isn't there 
-//       fixture: './movies.json'
-//     }),
-
-//     cy.intercept("GET", "https://rancid-tomatillos.herokuapp.com/api/v2/movies", {
-//       statusCode: 502, //network issue
-//       fixture: './movies.json'
-//     }),
+  it('should give an error message for a 502 status code', () => {
+    // Intercepting a 502 status code
+    cy.intercept('GET', 'https://rancid-tomatillos.herokuapp.com/api/v2/movies', {
+      statusCode: 500,
+      fixture: "movie_details.json"
+    })
+    // alias name for intercept , you create vairable name
+    .as('getMovieData')
+    cy.visit('http://localhost:3001')
+    //wait for intercept (404 error to complete)
+    cy.wait('@getMovieData')
+    cy.get('.error-container')
+    .contains(`Error: The page you're looking for doesn't exist.`);
+  });
+});
