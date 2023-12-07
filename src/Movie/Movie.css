@@ -12,8 +12,8 @@
     box-sizing: border-box;
     margin-top: 100px;
     background-color: rgb(204, 233, 243);
-    width: 12vw; 
-    height: 50vh; 
+    width: 13vw; 
+    height: 53vh; 
     position: relative;
   }
 
@@ -24,36 +24,23 @@
 
 .on-image {
   display: none;
+  align-content: center;
+  margin: 0;
   position: absolute;
-  /* bottom: 0; */
   color: white;
   background-color: rgba(0, 0, 0, .5);
-}
-
-.five-star-rating {
-  width: 18vw;
+  width: 19vw;
+  font-size: 25px;
 }
 
 .filled-heart,
 .heart {
-  width: 30px;
-  height: 30px;
+  width: 40px;
+  height: 40px;
   border: none;
-  /* width: 5vw; */
 }
 
-/* 
-.description-buttons-container {
-  display: flex;
-  flex-direction: column;
-  margin: 0px;
-  padding: 5px;
-} */
-
-.description-buttons-container p {
-  margin: 0;
+.movie-details {
+  padding-top: 20px;
 }
 
-.rating-heart-container {
-  display: flex !important;
-}
