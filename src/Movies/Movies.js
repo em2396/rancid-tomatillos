@@ -2,12 +2,10 @@ import './Movies.css'
 import PropTypes from 'prop-types';
 import Movie from '../Movie/Movie';
 
-const Movies = ({movies, displayMovie, currentMovieIndex, toggleLikeButton, likedMovies})  => {
-    //creating a boolean variable based on current width of window. Checking if window width is less than or equal to 55em
-    //1em = 16px;
-    //
-    const isMediumScreen =  window.innerWidth <= 800;
-    const isSmallScreen = window.innerWidth <= 375;
+const Movies = ({movies, displayMovie, currentMovieIndex, toggleLikeButton, likedMovies, windowSize})  => {
+    const numOfMovies = windowSize < 1200 ? 3 : 7;
+    // const isMediumScreen =  window.innerWidth <= 800;
+    const isSmallScreen = window.innerWidth <= 500;
     
     let movieCards;
 
@@ -28,7 +26,7 @@ const Movies = ({movies, displayMovie, currentMovieIndex, toggleLikeButton, like
           />
         ));
     } else {
-    movieCards = movies.slice(currentMovieIndex, currentMovieIndex + (isMediumScreen ? 3 : 7)).map((movie) => {
+    movieCards = movies.slice(currentMovieIndex, currentMovieIndex + numOfMovies).map((movie) => {
         return(
             <Movie 
             title={movie.title}
