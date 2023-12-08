@@ -48,45 +48,124 @@
   }
   
   .single-post {
-    width: 23vw;
+    width: 29vw;
     height: 70vh;
     padding: 50px;
   }
   
   .single-text {
-    font-size: 23px;
-    max-width: 80%;
-    width: 35vw;
-    height: 50vh;
-    /* margin: auto; */
-  }
+      font-size: 23px;
+      max-width: 80%;
+      width: 35vw;
+      height: 2vh;
+      /* margin-top: 100px; */
+    }
 
-  .back-to-home {
-    background-color: rgb(249, 246, 246);
-    color: black;
-    border-radius: 25px;
-    padding: 7px;
-    width: 220px;
-    height: 40px;
-    font-size: 23px;
-    cursor: pointer;
-    margin-top: 20px;
-    align-self: flex-start;
-  }
+    .video {
+      width: 35vw;
+      height: 50vh;
+      cursor: pointer;
+      /* margin-bottom: 200px; */
+    }
+
+
+    .back-to-home {
+      background-color: rgb(249, 246, 246);
+      color: black;
+      border-radius: 25px;
+      padding: 7px;
+      width: 220px;
+      height: 40px;
+      font-size: 23px;
+      cursor: pointer;
+      margin-top: 200px;
+      margin-bottom: 50px;
+      align-self: flex-start;
+    }
+    
+    
 
   .back-to-home:hover {
     background-color: rgb(172, 173, 189);
-  }
-  
-  .video {
-    width: 35vw;
-    height: 50vh;
-    cursor: pointer;
-  }
+}
 
-  .error {
+
+.error {
     border: 2px solid white;
     padding: 10px;
     margin: 10px;
     color: white;
+}
+
+@media (max-width: 1400px) {
+  .on-single-image {
+      display: flex;
+      flex-direction: column;
+      overflow-x: auto;
+      overflow-y: auto;
+  }
+  .single-post {
+      width: auto; 
+      max-width: 80%;
+      margin-top: 1500px; 
+    }
+  
+    .video-and-text {
+      width: 100vw; 
+      height: auto;
+      padding: 20px; 
+    
+    }
+  .video {
+      width: 65%;
+      height: 600px;
+      margin-bottom: 10px;
+  }
+  .single-text {
+      font-size: 40px;
+      width: 600px;
+      height: 50vh;
+  }
+  .back-to-home {
+      width: 100%;
+      height: 100%;
+  }
+  
+}
+
+@media (max-width: 500px) {
+    .on-single-image {
+        display: flex;
+        flex-direction: column;
+        overflow-x: auto;
+        overflow-y: auto;
+    }
+    .single-post {
+        width: auto; 
+        max-width: 80%;
+        margin-top: 750px; 
+      }
+    
+      .video-and-text {
+        width: 100vw; 
+        height: auto;
+        padding: 20px; 
+      
+      }
+    .video {
+        width: 70%;
+        height: 200px;
+        margin-bottom: 10px;
+    }
+    .single-text {
+        font-size: 20px;
+        width: 60%;
+        height: 2%;
+        margin-bottom: 190px;
+    }
+    .back-to-home {
+        width: 100%;
+        height: 100%;
+    }
+    
   }

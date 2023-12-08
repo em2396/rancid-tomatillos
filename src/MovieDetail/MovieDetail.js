@@ -25,7 +25,7 @@ export default function MovieDetail({ selectedMovie, selectedVideo, displayHomeP
                         <iframe className="video"
                         title="video player"
                         width="660"
-                        height="915"
+                        height="3000"
                         src={`https://www.youtube.com/embed/${selectedVideo.key}`}
                         frameBorder="0"
                         allowFullScreen
