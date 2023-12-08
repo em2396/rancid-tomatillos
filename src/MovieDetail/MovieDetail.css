@@ -79,3 +79,11 @@
   .video {
     cursor: pointer;
   }
+
+  .error {
+    border: 2px solid white;
+    padding: 10px;
+    margin: 10px;
+    color: white;
+    /* Add additional styling as needed */
+  }

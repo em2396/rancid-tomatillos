@@ -4,7 +4,14 @@ import { useParams, Link } from 'react-router-dom';
 
 export default function MovieDetail({ selectedMovie, selectedVideo, displayHomePage}) {
     if(!selectedMovie) {
-        return <p>Loading...</p>
+        return (
+        <>
+            <p className="error">404 Page Not Found: The page you are looking for doesn't exist</p>
+            <Link to="/"> 
+            <button className="back-to-home">Back To Home</button>
+            </Link>
+        </>
+        ) 
     }
   return (
         <div className="selected-movie">

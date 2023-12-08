@@ -6,7 +6,7 @@ export default function Movie({title, releaseDate, averageRating, posterImage, d
     const isMovieLiked = likedMovies.some(movie => movie.id === id);
     return(
         <div className="poster-container">
-            <Link to={`/${title}`}>
+            <Link to={`/movies/${id}`}>
                 <img onClick={() => displayMovie(id)} className="poster" src={posterImage} alt={`Poster for ${title}`}></img>
             </Link>
             <section className="description-buttons-container">
