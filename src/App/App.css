@@ -33,7 +33,11 @@ h2 {
   /* Add additional styling as needed */
 }
 
-
+@media screen and (max-width: 375px) {
+  .hidden {
+    display: none;
+  }
+}
 /* .arrow {
   position: relative;
   top: 50%;

@@ -60,7 +60,7 @@ describe('Display movie details', () => {
   })
 
   it('when user clicks on back to home button, it should display the main movies page', () => {
-    cy.visit('http://localhost:3000/movies/436270')
+  cy.visit('http://localhost:3000/movies/436270')
   cy.get('.back-to-home').click()
   })
 })

@@ -16,7 +16,7 @@ export default function MovieDetail({ selectedMovie, selectedVideo, displayHomeP
     const isHorror = selectedMovie.genres.includes('Horror');
 
     return (
-        // <div className="selected-movie">
+        <div className="selected-movie">
         <div className={`backdrop-container ${isHorror ? 'horror' : ''}`}>
                 <img className="backdrop-poster" src={selectedMovie.backdrop_path} alt={`Poster for ${selectedMovie.backdrop_path}`} />
                 <div className="on-single-image">

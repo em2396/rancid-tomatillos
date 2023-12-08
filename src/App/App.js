@@ -113,8 +113,8 @@ export default function App() {
           path="/"
           element= {
             <>
-              <button className="arrow left-arrow" onClick={arrowLeft}>&lt;</button>
-              <button className="arrow right-arrow" onClick={arrowRight}>&gt;</button>
+              <button className="arrow left-arrow hidden" onClick={arrowLeft}>&lt;</button>
+              <button className="arrow right-arrow hidden" onClick={arrowRight}>&gt;</button>
               <Movies movies={movies} displayMovie={displayMovie} currentMovieIndex={currentMovieIndex} likedMovies={likedMovies} toggleLikeButton={toggleLikeButton}/>
               {error && 
               <>
