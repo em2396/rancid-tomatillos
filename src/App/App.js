@@ -4,7 +4,7 @@ import Header from '../Header/Header'
 import Movies from '../Movies/Movies';
 import MovieDetail from '../MovieDetail/MovieDetail'
 import Error from '../Error/Error';
-import { Routes, Route } from 'react-router-dom'
+import { Routes, Route} from 'react-router-dom'
 import './App.css';
 
 export default function App() {
@@ -73,7 +73,7 @@ export default function App() {
   ))
   .then(movieDetails => {
     if (movieDetails.length === 2) {
-      const [movieObject, videosObject] = movieDetails;
+      const [ movieObject, videosObject ] = movieDetails;
       const movie = movieObject && movieObject.movie;
       const combinedDetails = {
         movie: movie,
@@ -88,7 +88,8 @@ export default function App() {
     }
     })
     .catch(error => {
-      setError(error.message)
+      console.log("error",error)
+      setError("hello")
     })
   }
 
@@ -106,25 +107,25 @@ export default function App() {
 
   return (
     <main className="App">
+      <Header />
       <Routes>
         <Route
           path="/"
           element= {
             <>
-            {(error.length > 0) ? (<Error error={error} message="The page you're looking for doesn't exist."/>) : (
-              <>
-              <Header />
-              <button className="arrow left-arrow" onClick={arrowLeft}>&lt;</button>
-              <button className="arrow right-arrow" onClick={arrowRight}>&gt;</button>
+              <button className="arrow left-arrow hidden" onClick={arrowLeft}>&lt;</button>
+              <button className="arrow right-arrow hidden" onClick={arrowRight}>&gt;</button>
               <Movies movies={movies} displayMovie={displayMovie} currentMovieIndex={currentMovieIndex} likedMovies={likedMovies} toggleLikeButton={toggleLikeButton}/>
-              </>)
+              {error && 
+              <>
+              <h2 className="error-container">"The server is down. Please try again later."</h2>
+              </>
               }
             </>
           }
         />
-        <Route path="/:movies" element={<MovieDetail selectedMovie={selectedMovie} selectedVideo={selectedVideo} displayHomePage={displayHomePage}/>}/>
-        {/* if route doesn't exist */}
-        <Route path='/*' element={<Error error={error} message="The page you're looking for doesn't exist."/>}/>
+        <Route path="/movies/:id" element={<MovieDetail selectedMovie={selectedMovie} selectedVideo={selectedVideo} displayHomePage={displayHomePage}/>}/>
+        <Route path="*" element={<Error />} />
       </Routes>
     </main>
   )

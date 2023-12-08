@@ -4,12 +4,19 @@ import { useParams, Link } from 'react-router-dom';
 
 export default function MovieDetail({ selectedMovie, selectedVideo, displayHomePage}) {
     if(!selectedMovie) {
-        return <p>Loading...</p>
+        return (
+        <>
+            <p className="error">404 Page Not Found: The page you are looking for doesn't exist</p>
+            <Link to="/"> 
+            <button className="back-to-home">Back To Home</button>
+            </Link>
+        </>
+        ) 
     }
     const isHorror = selectedMovie.genres.includes('Horror');
 
     return (
-        // <div className="selected-movie">
+        <div className="selected-movie">
         <div className={`backdrop-container ${isHorror ? 'horror' : ''}`}>
                 <img className="backdrop-poster" src={selectedMovie.backdrop_path} alt={`Poster for ${selectedMovie.backdrop_path}`} />
                 <div className="on-single-image">
