@@ -7,11 +7,11 @@
 
 .arrow {
   position: absolute;
-  top: 23%;
-  height: 50vh;
+  top: 26%;
+  height: 56vh;
   width: 80px;
   z-index: 1;
-  font-size: 70px;
+  font-size: 90px;
   background-color: rgba(0, 0, 0, .5);
   color: rgb(199, 191, 191);
   border: none;
@@ -23,7 +23,6 @@
 
 .right-arrow {
   right: 0;
-}
 
 h2 {
   border: 2px solid white !important;
@@ -45,3 +44,5 @@ h2 {
   padding: 8px;
   height: 50vh; */
   /* margin: 5px; */
+/* }  */
+
