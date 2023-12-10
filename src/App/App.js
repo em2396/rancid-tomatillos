@@ -14,6 +14,12 @@ export default function App() {
   const [ currentMovieIndex, setCurrentMovieIndex ] = useState(0);
   const [ error, setError ] = useState('')
   const [ likedMovies, setLikedMovies ] = useState([]);
+  const [ windowSize, setWindowSize ] = useState(window.innerWidth);
+
+  const updateSize = () => {
+    setWindowSize(window.innerWidth);
+    console.log(windowSize, 'window' )
+  }
 
   function toggleLikeButton(id) {
     const likedMovie = movies.find(selectedMovie => {
@@ -34,6 +40,7 @@ export default function App() {
 
   useEffect(() => {
     getMovies()
+    window.addEventListener('resize', updateSize)
   },[])
 
   const getMovies = () => {
@@ -107,15 +114,15 @@ export default function App() {
 
   return (
     <main className="App">
-      <Header />
       <Routes>
         <Route
           path="/"
           element= {
             <>
+              <Header />
               <button className="arrow left-arrow hidden" onClick={arrowLeft}>&lt;</button>
               <button className="arrow right-arrow hidden" onClick={arrowRight}>&gt;</button>
-              <Movies movies={movies} displayMovie={displayMovie} currentMovieIndex={currentMovieIndex} likedMovies={likedMovies} toggleLikeButton={toggleLikeButton}/>
+              <Movies movies={movies} displayMovie={displayMovie} currentMovieIndex={currentMovieIndex} likedMovies={likedMovies} toggleLikeButton={toggleLikeButton} windowSize={windowSize}/>
               {error && 
               <>
               <h2 className="error-container">"The server is down. Please try again later."</h2>

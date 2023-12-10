@@ -1,32 +1,26 @@
 
-  @media screen and (min-width: 800px) {
-    .movies-container {
-      display: grid;
-      grid-template-columns: repeat(7, 1fr);
-      grid-gap: 1px;
-      color: white;
-    }
-  }
+.movies-container {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-gap: 1px;
+  color: white;
+  background-color: black;
+}
 
-  @media screen and (max-width: 800px) {
-    .movies-container {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);  /* Show 3 posters in a row */
-      grid-gap: 1px;
-      width: 100vw;
-      height: 100vh;
-      white-space: nowrap;  /* Prevent wrapping of grid items to a new line */
-    }
+@media (max-width: 1200px) {
+  .movies-container {
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 3px;
   }
-  
-  @media screen and (max-width: 375px) {
-    .movies-container {
-      /* display: grid; */
-      grid-template-columns: repeat(1, 1fr);  /* Show 3 posters in a row */
-      grid-gap: 0.1px;
-      overflow-x: auto; /* Enable horizontal scrolling for additional posters */
-      width: 100vw;
-      height: 100vh;
-      white-space: nowrap;  /* Prevent wrapping of grid items to a new line */
-    }
+}
+
+@media (max-width: 500px) {
+  .movies-container {
+    grid-template-columns: repeat(1, 1fr); 
+    grid-gap: 0.1px;
+    overflow-x: auto; 
+    width: 100vw;
+    height: 100vh;
+    white-space: nowrap; 
   }
+} 

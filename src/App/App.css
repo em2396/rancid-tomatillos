@@ -30,24 +30,11 @@ h2 {
   padding: 10px;
   margin: 10px;
   color: white !important; 
-  /* Add additional styling as needed */
 }
 
-@media screen and (max-width: 375px) {
+@media (max-width: 500px) {
   .hidden {
     display: none;
   }
 }
-/* .arrow {
-  position: relative;
-  top: 50%;
-  /* bottom: 0; */
-  /* left: 50%; */
-  /* transform: translate(-50%, -50%);
-  color: white;
-  background-color: white(0, 0, 0, .5);
-  padding: 8px;
-  height: 50vh; */
-  /* margin: 5px; */
-/* }  */
 

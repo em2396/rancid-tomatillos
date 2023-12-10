@@ -17,43 +17,52 @@
     position: relative;
   }
 
-.poster:hover {
-  transform: scale(1.5) !important;
-  box-shadow: 0 0 10px white;
-}
-
-.on-image {
-  display: none;
-  align-content: center;
-  margin: 0;
-  position: absolute;
-  color: white;
-  background-color: rgba(0, 0, 0, .5);
-  width: 19vw;
-  font-size: 25px;
-}
-
-.filled-heart,
-.heart {
-  width: 40px;
-  height: 40px;
-  border: none;
-}
-
-.movie-details {
-  padding-top: 20px;
-}
-
-@media screen and (max-width: 800px) {
-  .poster {
-    width: 80%;
-    height: 50%;
+  
+  
+  .poster:hover {
+    transform: scale(1.5) !important;
+    box-shadow: 0 0 10px white;
   }
-}
+  
+  .on-image {
+    display: none;
+    align-content: center;
+    margin: 0;
+    position: absolute;
+    color: white;
+    background-color: rgba(0, 0, 0, .5);
+    width: 19vw;
+    font-size: 25px;
+  }
 
-@media screen and (min-width: 375px) {
+  .filled-heart,
+  .heart {
+    width: 40px;
+    height: 40px;
+    border: none;
+  }
+  
+  .movie-details {
+    padding-top: 20px;
+  }
+
+  @media (max-width: 1200px) {
+    .poster {
+      box-sizing: border-box;
+      margin-top: 100px;
+      background-color: rgb(204, 233, 243);
+      position: relative;
+      width: 25vw;
+      height: 50vh;
+    }
+    .on-image {
+      width: 38vw;
+    }
+  }
+
+@media (max-width: 500px) {
   .poster {
     width: 90%;
     height: 80%;
   }
-}
+} 
