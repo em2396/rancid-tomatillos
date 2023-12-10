@@ -25,10 +25,13 @@
 We are a pair of 2 front-end developers who worked together remotely via Zoom and asynchronously through the GitHub project board to complete this application. This project was completed from week 1 to week 3 in Mod 3 of the Front End development program at Turing School of Software & Design. 
 
 ## 🎥 Preview 
-
+https://github.com/em2396/rancid-tomatillos/assets/140124108/3e875be8-3e6d-458e-bb04-cc21392457f9
 
 ## 🔌 Server Setup
-
+1. Clone the repository: Open a terminal window. Navigate to the directory where you want to clone the repository. Run the following command: git clone git@github.com:alfonsojack/Rancid_Tomatillos.git
+2. Install the dependencies: Run the following command in the cloned repository directory: npm install
+3. Run the React app: Run the following command in the cloned repository directory: npm start
+4. Open the app in your web browser by navigating to http://localhost:3000
 
 ## 📚 Learning Goals
 - Gain competency with React fundamentals
@@ -39,12 +42,8 @@ We are a pair of 2 front-end developers who worked together remotely via Zoom an
 ## 🥇 Wins
 ⭐ Successfully using React for the first time while including refactoring for router
 ⭐ Working collaboratively as a team to overcome any obstacles and combining our knowledge to create a successful app
-⭐
-
-
+⭐ Successfully implement cypress testing
 
 
 ## 🚧 Challenges
 ❗ Using Cypress for the first time was challenging and difficult to wrap our heads around the syntax compared to previously using mocha and chai.
-❗
-❗
