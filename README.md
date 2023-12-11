@@ -1,6 +1,6 @@
 <div align="center">
   
-# :tomatillo: Rancid Tomatillos 
+Rancid Tomatillos 
 ![Tests](https://badgen.net/badge/tests/passing/green?icon=github)
 
 ## 💾 Technologies Used
@@ -28,7 +28,7 @@ We are a pair of 2 front-end developers who worked together remotely via Zoom an
 https://github.com/em2396/rancid-tomatillos/assets/140124108/3e875be8-3e6d-458e-bb04-cc21392457f9
 
 ## 🔌 Server Setup
-1. Clone the repository: Open a terminal window. Navigate to the directory where you want to clone the repository. Run the following command: git clone git@github.com:alfonsojack/Rancid_Tomatillos.git
+1. Clone the repository: Open a terminal window. Navigate to the directory where you want to clone the repository. Run the following command: git clone git@github.com:em2396/rancid-tomatillos.git
 2. Install the dependencies: Run the following command in the cloned repository directory: npm install
 3. Run the React app: Run the following command in the cloned repository directory: npm start
 4. Open the app in your web browser by navigating to http://localhost:3000
@@ -47,3 +47,4 @@ https://github.com/em2396/rancid-tomatillos/assets/140124108/3e875be8-3e6d-458e-
 
 ## 🚧 Challenges
 ❗ Using Cypress for the first time was challenging and difficult to wrap our heads around the syntax compared to previously using mocha and chai.
+❗ At first, the CSS was challenging and the responsive design was being difficult because of our code. We got it working through using an event listener. 
