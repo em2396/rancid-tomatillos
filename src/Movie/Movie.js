@@ -9,7 +9,6 @@ export default function Movie({title, releaseDate, averageRating, posterImage, d
             <Link to={`/movies/${id}`}>
                 <img onClick={() => displayMovie(id)} className="poster" src={posterImage} alt={`Poster for ${title}`}></img>
             </Link>
-            {/* <section className="description-buttons-container"> */}
                 <section className="on-image">
                     <p className="on-image movie-details"> This movie was released on {releaseDate} with an average rating of {averageRating}/10.</p>
                     <div className="on-image" onClick={() => toggleLikeButton(id)}>
@@ -23,11 +22,9 @@ export default function Movie({title, releaseDate, averageRating, posterImage, d
                     )}
                     </div>
                 </section>
-            {/* </section> */}
         </div>
     )
-}
-{/* <div className="five-star-rating on-image">Five Star Rating Lives Here</div> */}
+};
 
 Movie.propTypes = {
     isLiked: PropTypes.bool,
